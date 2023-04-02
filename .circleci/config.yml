@@ -3,12 +3,12 @@ jobs:
   build:
     working_directory: ~/repo
     docker:
-      - image: circleci/node:18.12.1
+      - image: circleci/node:14.17.0 # Actualizamos la imagen de Node.js
     steps:
       - checkout
       - run:
           name: Update NPM
-          command: "sudo npm install -g npm@5"
+          command: "sudo npm install -g npm@7" # Actualizamos npm a la última versión
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
@@ -21,3 +21,9 @@ jobs:
       - run:
           name: Run tests
           command: npm run test
+      - run:
+          name: Build Next.js app
+          command: npm run build # Agregamos este paso para construir la app
+      - run:
+          name: Start server
+          command: npm start # Agregamos este paso para iniciar el servidor
