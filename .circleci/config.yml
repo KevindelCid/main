@@ -24,6 +24,6 @@ jobs:
       - run:
           name: Build Next.js app
           command: npm run build # Agregamos este paso para construir la app
-      - run:
-          name: Start server
-          command: npm start # Agregamos este paso para iniciar el servidor
+      # - run:
+      #     name: Start server
+      #     command: npm start # Agregamos este paso para iniciar el servidor
