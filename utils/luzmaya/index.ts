@@ -1,0 +1,1 @@
+export {luzmayaNavbarItems, terms} from './variables'

@@ -1,0 +1,1 @@
+export type {luzmayaNavbarItemsProps, TermsProps} from './variables'
